@@ -6,11 +6,13 @@ import {
   SearchIcon,
   StarIcon,
 } from "@heroicons/react/solid";
-import { signIn } from "next-auth/react";
+import { signIn, useSession ,signOut } from "next-auth/react";
 
 function Header() {
+  const { data, status } = useSession();
+  console.log(data, status);
   return (
-    <div className="sticky bg-[#DB8731] top-0 flex items-center px-10 h-[72px] md:px-12 xl:px-16">
+    <header className="sticky bg-[#DB8731] top-0 flex items-center px-10 h-[72px] md:px-12 xl:px-16">
       <Image
         src={logo}
         alt="image of a W"
@@ -44,13 +46,24 @@ function Header() {
           </span>
         </a>
       </div>
-      <button
-        className="ml-auto uppercase border px-4 py-1.5 rounded font medium tracking-wide hover:bg-white hover:text-white transition duration-200"
-        onClick={signIn}
-      >
-        Login
-      </button>
-    </div>
+      {status === "authenticated" ? (
+        <>
+          <button
+            className="ml-auto uppercase border px-4 py-1.5 rounded font medium tracking-wide hover:bg-white hover:text-white transition duration-200"
+            onClick={signOut}
+          >
+            SignOut
+          </button>
+        </>
+      ) : (
+        <button
+          className="ml-auto uppercase border px-4 py-1.5 rounded font medium tracking-wide hover:bg-white hover:text-white transition duration-200"
+          onClick={signIn}
+        >
+          Login
+        </button>
+      )}
+    </header>
   );
 }
 export default Header;
