@@ -4,6 +4,7 @@ export const API_URL =
 export const SEARCH_URL =
   "https://api.sportsdata.io/v3/nba/scores/json/Players?key=" +
   process.env.REACT_APP_API_KEY;
+
 export const INJURED_URL =
-  "https://api.sportsdata.io/v3/nba/scores/json/InjuredPlayers?key=" +
+  "https://api.sportsdata.io/v3/nba/projections/json/InjuredPlayers?key=" +
   process.env.REACT_APP_API_KEY;

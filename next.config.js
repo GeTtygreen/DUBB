@@ -12,7 +12,9 @@ module.exports = {
       "amazonaws.com/static.fantasydata.com",
       "s3-us-west-2.amazonaws.com",
       "lh3.googleusercontent.com",
-      "github.com"
+      "github.com",
+      "https://upload.wikimedia.org",
+      "upload.wikimedia.org"
     ]
     
   },

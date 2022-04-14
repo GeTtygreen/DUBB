@@ -60,31 +60,9 @@ export default function newish({ Nba }) {
       </div>
       <div className={styles.link}>
       </div>
-        {/* {Nba ?.length === 0 ? (
-          <div>...loading</div>
-          ) : (
-            Nba.map((Nba) => (
-              <div key={Nba.NewsID}>
-              <h1>{Nba.Title}</h1>
-              <p>{Nba.Content}</p>
-              </div>
-              ))
-            )} */}
+
       </div>
     </div>
-      {/* {Nba ?.length === 0 ? (
-          <div>...loading</div>
-        ) : (
-          Nba.map((Nba) => (
-            <div key={Nba.NewsID}>
-              <h1>{Nba.Title}</h1>
-              <p>{Nba.Content}</p>
-            </div>
-          ))
-        )} */}
-      {/* <h1>{Nba[0].Title}</h1>
-      <p>{Nba[0].Content}</p> */}
-
       <Footer />
     </Layout>
   );

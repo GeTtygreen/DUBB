@@ -2,13 +2,13 @@ import React from "react";
 import Image from "next/image";
 import millify from "millify";
 
-export default function Player({ Players }) {
-  let card = Players.map((e, i) => {
+export default function HurtPlayers({ InjuredPlayers}) {
+  let card = InjuredPlayers.map((e, i) => {
     return (
       // player card .map//
       <div
         key={i}
-        className="bg-gradient-to-r from-[black] via-[#660708] to-[black]  relative  cursor-pointer   hover:scale-105 transition duration-200 ease-out group mx-auto p-10 border-none rounded-lg  grid-cols-2 -left-10 scrollbar-hide "
+        className="bg-gradient-to-r from-[black] via-[#660708] to-[black]  relative  cursor-pointer   hover:scale-105 transition duration-200 ease-out group mx-auto p-10 border-none rounded-lg w-[800px] grid-cols-2 -left-10 scrollbar-hide"
       >
         <h1 className="capatialize text-bold text-[#E85D04] text-2xl text-center  ">
           {e.FirstName} {e.LastName}

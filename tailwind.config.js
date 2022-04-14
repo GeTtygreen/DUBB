@@ -9,5 +9,8 @@ module.exports = {
       body:[ 'Shadows Into Light', ]
     }
   },
-  plugins: [],
+  plugins: [
+    require('tailwind-scrollbar-hide')
+
+  ],
 }
