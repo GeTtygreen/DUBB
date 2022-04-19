@@ -33,7 +33,7 @@ export default function Player({ Players }) {
     );
   });
   return (
-  <div className="flex flex-row scrollbar-hide overflow-x-scroll w-36">
+  <div className="flex flex-row scrollbar-hide overflow-x-scroll w-32">
 {card}
   </div>);
 }

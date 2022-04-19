@@ -18,6 +18,7 @@ import { RiBuilding2Line } from "react-icons/ri";
 import SidebarLink from "@/components/SidebarLink";
 import pic from "../images/basketball.png";
 import Image from "next/image";
+import RightSide from '@/components/RightSide'
 
 export default function Search({
   Players,
@@ -109,8 +110,9 @@ export default function Search({
       <div>
         <Body />
       </div>
+<RightSide />
 
-      <Footer className="" />
+      <Footer />
     </Layout>
   );
 }

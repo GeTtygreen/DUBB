@@ -1,8 +1,10 @@
 import React from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import { ethers } from "ethers";
+import fox from "../images/fox.png";
+import Image from "next/image";
 
 export default function Crypto() {
   const [isConnected, setIsConnected] = useState(false);
@@ -13,7 +15,7 @@ export default function Crypto() {
     if (typeof window.ethereum !== "undefined") {
       setHasMetamask(true);
     }
-  });
+  }, []);
 
   async function connect() {
     if (typeof window.ethereum !== "undefined") {
@@ -135,19 +137,40 @@ export default function Crypto() {
   return (
     <div>
       <Header />
-      <div>
-      {hasMetamask ? (
-        isConnected ? (
-          "Connected! "
+      <div className="flex flex-col  items-center my-[15%]">
+        <div className="py-5">
+          <Image src={fox} height="100px" width="100px" alt="fox" />
+        </div>
+        {hasMetamask ? (
+          isConnected ? (
+            "Connected! "
+          ) : (
+            <button className="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-500 to-orange-400 group-hover:from-green-500 group-hover:to-orange-400 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800">
+              <span
+                className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900  text-[#DB8731] rounded-md group-hover:bg-opacity-0"
+                onClick={() => connect()}
+              >
+                Connect
+              </span>
+            </button>
+          )
         ) : (
-          <button className="bg-[orange]" onClick={() => connect()}>Connect</button>
-        )
-      ) : (
-        "Please install metamask"
-      )}
+          "Please install metamask"
+        )}
 
-      {isConnected ? <button className="bg-[orange]" onClick={() => execute()}>Execute</button> : ""}
-    </div>
+        {isConnected ? (
+          <button className="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-500 to-orange-400 group-hover:from-green-500 group-hover:to-orange-400 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800">
+            <span
+              className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900  text-[#DB8731] rounded-md group-hover:bg-opacity-0"
+              onClick={() => execute()}
+            >
+              Execute
+            </span>
+          </button>
+        ) : (
+          ""
+        )}
+      </div>
       <Footer />
     </div>
   );
